@@ -1,43 +1,52 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vòng Chuyển Filter - Step Ring Up</title>
+    <title>Chi tiết sản phẩm </title>
     <link rel="stylesheet" href="../bootstrap-5.3.3-dist/css/bootstrap.min.css">
     <script src="../bootstrap-5.3.3-dist/js/jquery-3.7.1.min.js"></script>
     <script src="../bootstrap-5.3.3-dist/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="../CSS/Home.css">
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        .header2 {
-            background: linear-gradient(45deg, lightblue 30%, lightgreen 70%);
+        
+        .header {
+            background: linear-gradient();
+            padding: 15px;
+            align-items: center;
         }
+        
         .menu1:hover {
             color: red;
         }
+        
         .nd1 {
             border: 1px solid black;
         }
+        
         .menu3 {
             padding-left: 50px;
         }
+        
         .t1 {
             position: relative;
             padding: 0;
             height: 50px;
             border: 1px solid rgba(231, 200, 200, 0.367);
         }
+        
         .title {
             position: absolute;
             top: -3px;
             padding: 0;
             height: 55px;
         }
+        
         .title h2 {
             display: inline-block;
             font-weight: 700;
@@ -48,32 +57,40 @@
             height: 100%;
             box-shadow: 5px 3px 10px 1px rgba(0, 0, 0, 0.5);
         }
+        
         .footer {
             background-color: #222;
             color: white;
             padding: 20px 0;
         }
+        
         .footer a {
             color: #fff;
             text-decoration: none;
         }
+        
         .footer a:hover {
             color: #ff5e00;
         }
+        
         .footer .social-icons a {
             margin-right: 10px;
             font-size: 24px;
         }
+        
         .btn-custom {
             margin-top: 10px;
         }
+        
         .product-details {
-            margin-bottom: 50px; /* Adjust as needed */
+            margin-bottom: 50px;
+            /* Adjust as needed */
         }
         /* Additional styles for price elements */
         
         .total-price {
-            color: red; /* Change color to red */
+            color: red;
+            /* Change color to red */
         }
     </style>
     <script>
@@ -81,84 +98,67 @@
             const price = parseFloat(document.getElementById("productPrice").innerText.replace(" VNĐ", ""));
             const quantity = parseInt(document.getElementById("quantity").value);
             const total = price * quantity;
-            document.getElementById("totalPrice").innerText = total + " VNĐ";
-        }
-
-        function addToCart() {
-            const quantity = document.getElementById("quantity").value;
-            const productName = "Vòng chuyển filter"; // Replace with the actual product name
-            alert(`Đã thêm ${quantity} sản phẩm vào giỏ hàng thành công!`);
+            document.getElementById("totalPrice").innerText = total.toLocaleString('vi-VN') + ".000 VNĐ";
         }
     </script>
 </head>
+
 <body>
     <div class="container-fluid" style="padding: 0;">
-        <!-- Header -->
         <div class="header row">
-            <div class="header1 row bg-body-secondary">
-                <div class="col-6 pt-3 ps-4 hotline">
-                    <p style="display: flex; flex-direction: row;">Hotline: <a class="nav-link" href="#">(028) 3985 1932</a></p>
+            <div class="col d-flex justify-content-between align-items-center">
+                <!-- Navigation Links -->
+                <div class="col-1 mt-1 ms-2 text-center">
+                    <a href="../HTML/Home.html">
+                        <img style=" width: 100%;" src="../IMG/Logo.png" alt="Logo Công ty">
+                    </a>
                 </div>
-                <div class="col-6 pt-3">
-                    <div class="row">
-                        <div class="col-6">
-                            <input style="border-radius: 15px; width: 250px;" type="search" placeholder="Tìm kiếm sản phẩm">
-                            <a href="#">
-                                <img style="height: 20px;" src="../IMG/icon-header-3.png" alt="Search Icon">
-                            </a>
-                        </div>
-                        <div class="col-4">
-                            <p style="display: flex; flex-direction: row;">
-                                <a id="loginLink" class="menu1 nav-link" href="../HTML/DangNhap.html">Đăng nhập</a>
-                            </p>
-                        </div>
-                        <div class="col-2">
-                            <a href="#">
-                                <img style="height: 30px;" src="../IMG/Remove-bg.ai_1729655897749.png" alt="Icon">
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Header 2 -->
-            <div class="header2 row">
-                <div class="col-2 mt-1 ms-2">
-                    <img style="height: 100px;" src="../IMG/Logo.png" alt="Logo">
-                </div>
-                <div class="col-9">
-                    <ul class="nav1 nav pt-4">
-                        <li class="nav-item pe-5"><a class="menu1 nav-link fs-4" style="color: black;" href="#">Khuyến mãi</a></li>
-                        <li class="nav-item pe-5"><a class="menu1 nav-link fs-4" style="color: black;" href="#">Thanh toán</a></li>
-                        <li class="nav-item pe-5"><a class="menu1 nav-link fs-4" style="color: black;" href="#">Tin tức</a></li>
-                        <li class="nav-item pe-5"><a class="menu1 nav-link fs-4" style="color: black;" href="#">Liên hệ</a></li>
-                        <li class="nav-item pe-5"><a class="menu1 nav-link fs-4" style="color: black;" href="#">Sitemap</a></li>
+                <div class="col-7">
+                    <ul class="nav nav1" style="display: flex; gap: 30px; padding-top: 10px;">
+                        <li><a class="menu1 nav-link fs-5" style="color: black; text-decoration: none;" href="#">Khuyến mãi</a></li>
+                        <li><a class="menu1 nav-link fs-5" style="color: black; text-decoration: none;" href="../HTML/Giới Thiệu.html">Giới Thiệu</a></li>
+                        <li><a class="menu1 nav-link fs-5" style="color: black; text-decoration: none;" href="../HTML/TinTuc.html">Tin tức</a></li>
+                        <li><a class="menu1 nav-link fs-5" style="color: black; text-decoration: none;" href="../HTML/Liên hệ.html">Liên hệ</a></li>
+                        <li><a class="menu1 nav-link fs-5" style="color: black; text-decoration: none;" href="#">Sitemap</a></li>
                     </ul>
+
                 </div>
+                <!-- Search Box -->
+                <div class="col-2" style="display: flex; align-items: center;">
+                    <input type="search" placeholder="Tìm kiếm sản phẩm" style="border-radius: 15px; width: 200px; padding: 5px 10px; border: 1px solid #ccc;">
+                    <!-- <a href="#"><img style="height: 20px; width: 100%;" src="../IMG/icon-header-3.png" alt="Biểu tượng Tìm kiếm" aria-label="Tìm kiếm"></a> -->
+                </div>
+
+                <!-- Login Link and Cart Icon -->
+                <a id="loginLink" href="" style="color: black; text-decoration: none; font-size: 16px; margin-left: 20px;" data-bs-toggle="modal" data-bs-target="#modalId">Đăng nhập</a>
+                <a href="../HTML/gioHang.html" style="margin-left: 15px;">
+                    <img style="height: 30px;" src="../IMG/Remove-bg.ai_1729655897749.png" alt="Giỏ hàng" aria-label="Giỏ hàng">
+                </a>
             </div>
         </div>
-
         <!-- Product Details Section -->
         <div class="section mt-5 product-details">
             <div class="container">
                 <div class="row">
                     <div class="col-md-6">
-                        <img src="../IMG/product-image.png" alt="Product Image" style="width: 100%; height: auto; border: 1px solid #ccc; border-radius: 5px;">
+                        <img src="../IMG/day_deo.webp" alt="Product Image" style="width: 80%; height: auto; border: 1px solid #ccc; border-radius: 5px;">
                     </div>
                     <div class="col-md-6">
-                        <h3>Thông tin sản phẩm</h3>
+                        <h3>Dây Đeo Máy Ảnh - Dây Sọc -3 Màu - Camera Strap Dành Cho Fujifilm, Camon, Sony, Nikon...
+                        </h3>
                         <p><strong>Đánh giá:</strong> ★★★★☆ (4.0/5.0)</p>
-                        <p><strong>Đơn giá:</strong> <span id="productPrice" class="price">500000 VNĐ</span></p>
+                        <p><strong>Đơn giá:</strong> <span id="productPrice" class="price">139,000₫</span></p>
                         <p><strong>Mã sản phẩm:</strong> SP001</p>
                         <p><strong>Trạng thái:</strong> Còn hàng</p>
-                        <p><strong>Mô tả:</strong> Vòng chuyển filter cho máy ảnh, giúp tạo hiệu ứng ánh sáng tốt hơn.</p>
+                        <p><strong>Mô tả:</strong>Thương hiệu Việt Nam chuyên dây đeo máy ảnh và phụ kiện máy ảnh khác. Các dòng sản phẩm nổi bật như: Dây đeo máy ảnh da thật, dây đeo máy ảnh thổ cẩm, thêu, dây đeo cố ... </p>
                         <div class="mt-3">
                             <label for="quantity"><strong>Số lượng:</strong></label>
                             <input type="number" id="quantity" value="1" min="1" onchange="updateTotal()">
                         </div>
-                        <p><strong class="fs-5">Tổng tiền:</strong> <span id="totalPrice" class="total-price">500000 VNĐ</span></p>
+                        <p><strong class="fs-5">Tổng tiền:</strong> <span id="totalPrice" class="total-price">
+                            </span></p>
                         <div class="btn-custom">
-                            <button class="btn btn-primary" onclick="alert('Mua ngay!')">Mua ngay</button>
-                            <button class="btn btn-secondary" onclick="addToCart()">Thêm vào giỏ hàng</button>
+                            <button class="btn btn-primary" onclick="alert('Mua ngay thành công!')">Mua ngay</button>
                         </div>
                     </div>
                 </div>
@@ -166,7 +166,7 @@
         </div>
 
         <!-- Footer -->
-        <footer class="footer">
+        <div class="footer">
             <div class="container">
                 <div class="row">
                     <!-- Company Info -->
@@ -225,7 +225,88 @@
                     </div>
                 </div>
             </div>
-        </footer>
+        </div>
     </div>
+    <!-- Modal -->
+    <div class="modal fade" id="modalId" tabindex="-1" role="dialog" aria-labelledby="modalTitleId" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header" style="justify-content: center; border-bottom: none;">
+                    <h3 class="modal-title" id="modalTitleId">TMember</h3>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" style="position: absolute; top: 10px; right: 10px;"></button>
+                </div>
+                <div class="modal-body text-center">
+                    <p>Vui lòng đăng nhập tài khoản TMember để xem ưu đãi và thanh toán dễ dàng hơn.</p>
+                </div>
+                <div class="modal-footer" style="justify-content: center; gap: 10px; border-top: none;">
+                    <button type="button" class="btn" style="background-color: #FF5757; color: white; width: 120px; height: 40px; border-radius: 5px; display: flex; align-items: center; justify-content: center;">
+                        <a class="nav-link" href="../HTML/DangNhap.html">Đăng nhập</a>
+                    </button>
+                    <button type="button" class="btn" style="background-color: #FF4500; color: white; width: 120px; height: 40px; border-radius: 5px; display: flex; align-items: center; justify-content: center;">
+                        <a class="nav-link" href="../HTML/Dangky.html">Đăng ký</a>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="modalId" tabindex="-1" role="dialog" aria-labelledby="modalTitleId" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header" style="justify-content: center; border-bottom: none;">
+                    <h3 class="modal-title" id="modalTitleId">TMember</h3>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" style="position: absolute; top: 10px; right: 10px;"></button>
+                </div>
+                <div class="modal-body text-center">
+                    <p>Vui lòng đăng nhập tài khoản TMember để xem ưu đãi và thanh toán dễ dàng hơn.</p>
+                </div>
+                <div class="modal-footer" style="justify-content: center; gap: 10px; border-top: none;">
+                    <button type="button" class="btn" style="background-color: #FF5757; color: white; width: 120px; height: 40px; border-radius: 5px; display: flex; align-items: center; justify-content: center;">
+                        <a class="nav-link" href="../HTML/DangNhap.html">Đăng nhập</a>
+                    </button>
+                    <button type="button" class="btn" style="background-color: #FF4500; color: white; width: 120px; height: 40px; border-radius: 5px; display: flex; align-items: center; justify-content: center;">
+                        <a class="nav-link" href="../HTML/Dangky.html">Đăng ký</a>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Lấy ID sản phẩm từ URL
+            const urlParams = new URLSearchParams(window.location.search);
+            const productId = urlParams.get('id');
+
+            if (productId) {
+                fetch('../JS/products.json') // Đảm bảo đường dẫn đúng
+                    .then(response => {
+                        if (!response.ok) throw new Error('Không thể tải dữ liệu');
+                        return response.json();
+                    })
+                    .then(products => {
+                        const product = products.find(p => p.id == productId);
+                        if (product) {
+                            // Ghi đè thông tin sản phẩm
+                            document.querySelector('.product-details h3').textContent = product.name;
+                            document.getElementById('productPrice').textContent = product.price.toLocaleString('vi-VN') + '₫';
+                            document.querySelector('.product-details p:nth-of-type(3)').textContent = `Mã sản phẩm: ${product.product_code}`;
+                            document.querySelector('.product-details p:nth-of-type(5)').textContent = `Mô tả: ${product.description}`;
+
+                            // Cập nhật hình ảnh
+                            const productImage = document.querySelector('.product-details img');
+                            productImage.src = product.images; // Ghi đè src của thẻ img
+                            productImage.alt = product.name; // Cập nhật alt để mô tả hình ảnh
+                        } else {
+                            alert("Sản phẩm không tồn tại.");
+                        }
+                    })
+                    .catch(error => console.error('Lỗi khi tải dữ liệu sản phẩm:', error));
+            }
+        });
+    </script>
+
+
+
 </body>
+
 </html>

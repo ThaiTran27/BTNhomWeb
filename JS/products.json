@@ -1,0 +1,49 @@
+[{
+        "id": 1,
+        "images": "../IMG/Filter - Kính Lọc/hinh1.webp",
+        "name": "Filter - Kính Lọc Kase ACG Black Mist 1/4 86mm",
+        "product_code": "1705",
+        "price": 690000,
+        "description": ""
+    },
+    {
+        "id": 2,
+        "images": "../IMG/Filter - Kính Lọc/hinh2.webp",
+        "name": "Filter - Kính Lọc Kase MC-UV III 95mm",
+        "product_code": "1435n",
+        "price": 2599000,
+        "description": ""
+    },
+    {
+        "id": 3,
+        "images": "../IMG/Filter - Kính Lọc/hinh3.webp",
+        "name": "Filter - Kính Lọc MECO Black Mist 1/4 82mm",
+        "product_code": "1434h",
+        "price": 649000,
+        "description": ""
+    },
+    {
+        "id": 4,
+        "images": "../IMG/Filter - Kính Lọc/hinh4.webp",
+        "name": "Filter - Kính Lọc MECO CPL 1-8 Stops",
+        "product_code": "1435a",
+        "price": 299000,
+        "description": ""
+    },
+    {
+        "id": 5,
+        "images": "../IMG/Filter - Kính Lọc/hinh5.webp",
+        "name": "Filter - Kính Lọc MECO Variable ND-X 1-8 Stops",
+        "product_code": "1435b",
+        "price": 359000,
+        "description": ""
+    },
+    {
+        "id": 6,
+        "images": "../IMG/Filter - Kính Lọc/hinh6.webp",
+        "name": "Filter - Kính Lọc HOYA HMC ND64 - Giảm 06 F-stops",
+        "product_code": "1435c",
+        "price": 1010000,
+        "description": ""
+    }
+]

@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="../bootstrap-5.3.3-dist/css/bootstrap.min.css">
+    <script src="../bootstrap-5.3.3-dist/js/jquery-3.7.1.min.js"></script>
+    <script src="../bootstrap-5.3.3-dist/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="../CSS/Home.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        .header2 {
+            background: linear-gradient(45deg, lightblue 30%, lightgreen 70%);
+        }
+        
+        .menu1:hover {
+            color: red;
+        }
+        
+        .nd1 {
+            border: 1px solid black;
+        }
+        
+        .menu3 {
+            padding-left: 50px;
+        }
+        
+        .t1 {
+            position: relative;
+            padding: 0px;
+            height: 50px;
+            border: 1px solid rgba(231, 200, 200, 0.367);
+        }
+        
+        .footer {
+            background-color: #222;
+            color: white;
+            padding: 20px 0;
+        }
+        
+        .footer a {
+            color: #fff;
+            text-decoration: none;
+        }
+        
+        .footer a:hover {
+            color: #ff5e00;
+        }
+        
+        .footer .logo img {
+            width: 150px;
+        }
+        
+        .footer .social-icons a {
+            margin-right: 10px;
+        }
+        
+        .footer .social-icons a i {
+            font-size: 24px;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+        }
+        
+        .contact-container {
+            background-color: white;
+            padding: 40px;
+            margin-top: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .contact-header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        .contact-header h2 {
+            color: #343a40;
+        }
+        
+        .contact-header p {
+            color: #6c757d;
+        }
+        
+        .form-group label {
+            font-weight: bold;
+            color: #495057;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid" style="padding: 0px;">
+        <!-- Header 1 -->
+        <div class="header row">
+            <div class="col d-flex justify-content-between align-items-center">
+                <!-- Navigation Links -->
+                <div class="col-1 mt-1 ms-2 text-center">
+                    <a href="../HTML/Home.html">
+                        <img style=" width: 100%;" src="../IMG/Logo.png" alt="Logo Công ty">
+                    </a>
+                </div>
+                <div class="col-7">
+                    <ul class="nav nav1" style="display: flex; gap: 30px; padding-top: 10px;">
+                        <li><a class="menu1 nav-link fs-5" style="color: black; text-decoration: none;" href="#">Thành Viên</a></li>
+                        <li><a class="menu1 nav-link fs-5" style="color: black; text-decoration: none;" href="../HTML/Giới Thiệu.html">Giới Thiệu</a></li>
+                        <li><a class="menu1 nav-link fs-5" style="color: black; text-decoration: none;" href="../HTML/TinTuc.html">Tin tức</a></li>
+                        <li><a class="menu1 nav-link fs-5" style="color: black; text-decoration: none;" href="../HTML/Liên hệ.html">Liên hệ</a></li>
+                        <li><a class="menu1 nav-link fs-5" style="color: black; text-decoration: none;" href="#">Sitemap</a></li>
+                    </ul>
+
+                </div>
+                <!-- Search Box -->
+                <div class="col-2" style="display: flex; align-items: center;">
+                    <input type="search" placeholder="Tìm kiếm sản phẩm" style="border-radius: 15px; width: 250px; padding: 5px 10px; border: 1px solid #ccc;">
+                    <!-- <a href="#"><img style="height: 20px; width: 100%;" src="../IMG/icon-header-3.png" alt="Biểu tượng Tìm kiếm" aria-label="Tìm kiếm"></a> -->
+                </div>
+
+                <!-- Login Link and Cart Icon -->
+                <a id="loginLink" href="../HTML/DangNhap.html" style="color: black; text-decoration: none; font-size: 16px; margin-left: 20px;" data-bs-toggle="modal" data-bs-target="#modalId">Đăng nhập</a>
+                <a href="#" style="margin-left: 15px;">
+                    <a href="../HTML/gioHang.html">
+                        <img style="height: 30px;" src="../IMG/Remove-bg.ai_1729655897749.png" alt="Giỏ hàng" aria-label="Giỏ hàng">
+                    </a>
+                </a>
+            </div>
+        </div>
+        <!-- Section -->
+        <div class="contact-container">
+            <!-- Tiêu đề -->
+            <div class="contact-header">
+                <h2>Liên Hệ Chúng Tôi</h2>
+                <p>Chúng tôi luôn sẵn sàng lắng nghe và hỗ trợ bạn</p>
+            </div>
+            <!-- Form liên hệ -->
+            <form action="/send-contact-form" method="post">
+                <div class="form-group mb-3">
+                    <label for="name">Họ và tên:</label>
+                    <input type="text" class="form-control" id="name" name="name" required placeholder="Nhập họ tên của bạn">
+                </div>
+                <div class="form-group mb-3">
+                    <label for="email">Email:</label>
+                    <input type="email" class="form-control" id="email" name="email" required placeholder="Nhập địa chỉ email">
+                </div>
+                <div class="form-group mb-3">
+                    <label for="phone">Số điện thoại:</label>
+                    <input type="tel" class="form-control" id="phone" name="phone" required placeholder="Nhập số điện thoại">
+                </div>
+                <div class="form-group mb-3">
+                    <label for="message">Nội dung:</label>
+                    <textarea class="form-control" id="message" name="message" rows="5" required placeholder="Nhập nội dung liên hệ"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary w-100">Gửi Liên Hệ</button>
+            </form>
+        </div>
+        <!-- section -->
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container">
+                <div class="row">
+                    <!-- Company Info -->
+                    <div class="col-md-4">
+                        <h5>CÔNG TY TNHH TM mệt muốn chết</h5>
+                        <p>Địa chỉ: 12 Nguyễn Văn Bảo, Phường 4, Gò Vấp, Hồ Chí Minh</p>
+                        <p>Điện thoại: (028).39851932</p>
+                        <p>Di động: 0943 007 107 - 0948 007 107</p>
+                        <p>Email: <a href="mailto:xedaptructuyen@gmail.com">thaitram@gmail.com</a></p>
+                    </div>
+
+                    <!-- Information Links -->
+                    <div class="col-md-2">
+                        <h5>THÔNG TIN</h5>
+                        <ul class="list-unstyled">
+                            <li><a href="#">Bảo mật thông tin</a></li>
+                            <li><a href="#">Quy định chung</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Introduction Links -->
+                    <div class="col-md-2">
+                        <h5>GIỚI THIỆU</h5>
+                        <ul class="list-unstyled">
+                            <li><a href="#">Giới thiệu</a></li>
+                            <li><a href="#">Liên hệ</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Services Links -->
+                    <div class="col-md-2">
+                        <h5>DỊCH VỤ</h5>
+                        <ul class="list-unstyled">
+                            <li><a href="#">DV Bán hàng</a></li>
+                            <li><a href="#">DV Giao hàng</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Social Icons -->
+                    <div class="col-md-2">
+                        <h5>LIÊN KẾT VỚI CHÚNG TÔI</h5>
+                        <div class="social-icons">
+                            <a href="#"><img src="../IMG/logo face.png" width="24" alt="face"></a>
+                            <a href="#"><img src="../IMG/logo google.png" width="24" alt="google"></a>
+                            <a href="#"><img src="../IMG/logo P.png" width="24" alt="P"></a>
+                            <a href="#"><img src="../IMG/logo X.png" width="24" alt="X"></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row mt-4">
+                    <div class="col-12 text-center">
+                        <img src="../IMG/logofooter.png" width="150" alt="Bộ Công Thương">
+                        <h5>ĐÃ THÔNG BÁO - BỘ CÔNG THƯƠNG</h5>
+                        <p>Copyright 2024 Phụ Kiện Máy ảnh Trực tuyến</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    </div>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="modalId" tabindex="-1" role="dialog" aria-labelledby="modalTitleId" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header" style="justify-content: center; border-bottom: none;">
+                    <h3 class="modal-title" id="modalTitleId">TMember</h3>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" style="position: absolute; top: 10px; right: 10px;"></button>
+                </div>
+                <div class="modal-body text-center">
+                    <p>Vui lòng đăng nhập tài khoản TMember để xem ưu đãi và thanh toán dễ dàng hơn.</p>
+                </div>
+                <div class="modal-footer" style="justify-content: center; gap: 10px; border-top: none;">
+                    <button type="button" class="btn" style="background-color: #FF5757; color: white; width: 120px; height: 40px; border-radius: 5px; display: flex; align-items: center; justify-content: center;">
+                    <a class="nav-link" href="../HTML/DangNhap.html">Đăng nhập</a>
+                    </button>
+                    <button type="button" class="btn" style="background-color: #FF4500; color: white; width: 120px; height: 40px; border-radius: 5px; display: flex; align-items: center; justify-content: center;">
+                    <a class="nav-link" href="../HTML/Dangky.html">Đăng ký</a>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--  -->
+    </div>
+</body>
+
+</html>
