@@ -34,12 +34,7 @@
                         </div>
                         <div class="mb-3">
                             <label for="password" class="form-label">Mật Khẩu</label>
-                            <div class="input-group">
-                                <input type="password" class="form-control" id="password" required>
-                                <button type="button" class="btn btn-outline-secondary" id="togglePassword">
-                                    <span id="passwordIcon" class="bi bi-eye-slash"></span>
-                                </button>
-                            </div>
+                            <input type="password" class="form-control" id="password" required>
                         </div>
                         <div class="mb-3">
                             <label for="captcha" class="form-label">Mã Captcha</label>
@@ -144,30 +139,62 @@
             $('#loginForm').on('submit', function(event) {
                 event.preventDefault(); // Ngăn chặn hành động mặc định
 
-                const username = $('#username').val();
+                const username = $('#username').val(); // Tên đăng nhập (số điện thoại)
                 const password = $('#password').val();
                 const captchaInput = $('#captcha').val();
                 const captchaCode = $('#captchaCode').text();
 
+                // Kiểm tra các trường bắt buộc
                 if (username === '' || password === '' || captchaInput === '') {
                     alert('Vui lòng điền tất cả các trường!');
                     return;
                 }
 
+                // Kiểm tra captcha
                 if (captchaInput !== captchaCode) {
                     alert('Mã captcha không chính xác!');
                     generateCaptcha(); // Tạo mã captcha mới
+                    $('#captcha').val(''); // Xóa giá trị nhập captcha
                     return;
                 }
 
-                // Giả sử đăng nhập thành công
-                alert('Đăng nhập thành công!');
-                localStorage.setItem('isLoggedIn', 'true'); // Đặt cờ đăng nhập
-                window.location.href = '../HTML/Home.html'; // Chuyển hướng đến Home
+                try {
+                    // Kiểm tra thông tin đăng nhập
+                    const storedUserInfo = JSON.parse(localStorage.getItem('userInfo'));
+
+                    if (!storedUserInfo) {
+                        alert('Chưa có tài khoản nào được tạo! Vui lòng đăng ký.');
+                        return;
+                    }
+
+                    // Kiểm tra tên đăng nhập và mật khẩu
+                    if (username === storedUserInfo.phone && password === storedUserInfo.password) {
+                        alert('Đăng nhập thành công!');
+                        localStorage.setItem('isLoggedIn', 'true');
+                        window.location.href = '../HTML/Home.html';
+                    } else {
+                        alert('Tên đăng nhập hoặc mật khẩu không chính xác!');
+                        $('#password').val(''); // Xóa mật khẩu đã nhập
+                        generateCaptcha(); // Tạo mã captcha mới
+                        $('#captcha').val(''); // Xóa giá trị nhập captcha
+                    }
+                } catch (error) {
+                    console.error('Lỗi khi đọc dữ liệu từ localStorage:', error);
+                    alert('Đã xảy ra lỗi khi đăng nhập. Vui lòng thử lại.');
+                }
             });
+
+            // Kiểm tra và điền thông tin đã lưu (nếu có)
+            if ($('#rememberMe').is(':checked')) {
+                const savedUsername = localStorage.getItem('savedUsername');
+                const savedPassword = localStorage.getItem('savedPassword');
+                if (savedUsername && savedPassword) {
+                    $('#username').val(savedUsername);
+                    $('#password').val(savedPassword);
+                }
+            }
         });
     </script>
-
 </body>
 
 </html>
