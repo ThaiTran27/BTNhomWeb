@@ -172,11 +172,13 @@
                 </div>
                 <div class="col-7">
                     <ul class="nav nav1" style="display: flex; gap: 30px; padding-top: 10px;">
-                        <li><a class="menu1 nav-link fs-5" style="color: black; text-decoration: none;" href="#">Thành viên</a></li>
-                        <li><a class="menu1 nav-link fs-5" style="color: black; text-decoration: none;" href="../HTML/Giới Thiệu.html">Giới Thiệu</a></li>
-                        <li><a class="menu1 nav-link fs-5" style="color: black; text-decoration: none;" href="../HTML/TinTuc.html">Tin tức</a></li>
-                        <li><a class="menu1 nav-link fs-5" style="color: black; text-decoration: none;" href="../HTML/Liên hệ.html">Liên hệ</a></li>
-                        <li><a class="menu1 nav-link fs-5" style="color: black; text-decoration: none;" href="#">Sitemap</a></li>
+                        <li><a class="menu1 nav-link fs-5" style="color: black; text-decoration: none;" href="../HTML/Thành viên.html">Thành viên</a></li>
+                        <li><a class="menu1 nav-link fs-5" style="color: black; text-decoration: none;" href="../HTML/Giới Thiệu.html">Giới thiệu</a></li>
+                        <li><a class="menu1 nav-link fs-5" style="color: black; text-decoration: none;" href="../HTML/TinTuc.html">Tin
+                                tức</a></li>
+                        <li><a class="menu1 nav-link fs-5" style="color: black; text-decoration: none;" href="../HTML/Liên hệ.html">Liên
+                                hệ</a></li>
+                        <li><a class="menu1 nav-link fs-5" style="color: black; text-decoration: none;" href="../HTML/Sitemap.html">Sitemap</a></li>
                     </ul>
                 </div>
                 <!-- Hộp tìm kiếm -->
@@ -228,7 +230,7 @@
             <div class="row">
                 <!-- Company Info -->
                 <div class="col-md-4">
-                    <h5>CÔNG TY TNHH TM mệt muốn chết</h5>
+                    <h5>CÔNG TY TNHH TM MayanhTT</h5>
                     <p>Địa chỉ: 12 Nguyễn Văn Bảo, Phường 4, Gò Vấp, Hồ Chí Minh</p>
                     <p>Điện thoại: (028).39851932</p>
                     <p>Di động: 0943 007 107 - 0948 007 107</p>
@@ -308,53 +310,89 @@
     </div>
     <!--  -->
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            displayCartItems();
-            updateCartCount();
-        });
-
         function displayCartItems() {
             const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
             const tableBody = document.getElementById('cart-items');
             let totalCart = 0;
+
             tableBody.innerHTML = '';
+
             if (cartItems.length === 0) {
                 tableBody.innerHTML = `
-        <tr>
-          <td colspan="8" class="text-center">
-            <p>Giỏ hàng trống</p>
-            <a href="../html/home.html" class="btn btn-primary">Tiếp tục mua sắm</a>
-          </td>
-        </tr>
-      `;
+            <tr>
+                <td colspan="7" class="text-center">
+                    <p>Giỏ hàng trống</p>
+                    <a href="../HTML/Filter - Kính lọc.html" class="btn btn-primary">Tiếp tục mua sắm</a>
+                </td>
+            </tr>
+        `;
                 document.getElementById('cart-total').textContent = '0 VNĐ';
                 return;
             }
+
             cartItems.forEach((item, index) => {
                 const row = document.createElement('tr');
                 row.innerHTML = `
-        <td>${index + 1}</td>
-        <td>${item.name}</td>
-        <td>${item.color}</td>
-        <td>${item.quantity}</td>
-        <td>${formatPrice(item.price)} VNĐ</td>
-        <td>${formatPrice(item.total)} VNĐ</td>
-        <td>
-          <button class="btn btn-danger btn-sm" onclick="removeItem(${item.id })">
-            <i class="bi bi-trash"></i>
-          </button>
-        </td>
-        <td>
-          <button class="btn btn-primary btn-sm" onclick="buyItem(${item.id})">
-            Mua
-          </button>
-        </td>
-      `;
+            <td>${index + 1}</td>
+            <td>${item.name}</td>
+            <td>
+                <button class="btn btn-sm btn-secondary" onclick="updateQuantity(${item.id}, ${item.quantity - 1})">-</button>
+                <span class="mx-2">${item.quantity}</span>
+                <button class="btn btn-sm btn-secondary" onclick="updateQuantity(${item.id}, ${item.quantity + 1})">+</button>
+            </td>
+            <td>${formatPrice(item.price)} VNĐ</td>
+            <td>${formatPrice(item.total)} VNĐ</td>
+            <td>
+                <button class="btn btn-danger btn-sm" onclick="removeItem(${item.id})">
+                    <i class="bi bi-trash"></i>
+                </button>
+            </td>
+            <td>
+                <button class="btn btn-primary btn-sm" onclick="buyItem(${item.id})">
+                    Mua
+                </button>
+            </td>
+        `;
                 tableBody.appendChild(row);
                 totalCart += item.total;
             });
+
             document.getElementById('cart-total').textContent = `${formatPrice(totalCart)} VNĐ`;
         }
+
+        // Hàm cập nhật số lượng sản phẩm
+        function updateQuantity(itemId, newQuantity) {
+            if (newQuantity < 1) return;
+
+            let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+            const item = cartItems.find(item => item.id === itemId);
+
+            if (item) {
+                item.quantity = newQuantity;
+                item.total = item.price * newQuantity;
+                localStorage.setItem('cartItems', JSON.stringify(cartItems));
+                displayCartItems();
+                updateCartCount();
+            }
+        }
+
+        // Hàm định dạng giá tiền
+        function formatPrice(price) {
+            return new Intl.NumberFormat('vi-VN').format(price);
+        }
+
+        // Hàm cập nhật số lượng hiển thị trên icon giỏ hàng
+        function updateCartCount() {
+            const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+            const totalItems = cartItems.reduce((sum, item) => sum + item.quantity, 0);
+            // Cập nhật số hiển thị trên icon giỏ hàng (nếu có)
+        }
+
+        // Thêm sự kiện load trang
+        document.addEventListener('DOMContentLoaded', function() {
+            displayCartItems();
+            updateCartCount();
+        });
 
         function removeItem(itemId) {
             let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
@@ -366,16 +404,6 @@
 
         function buyItem(itemId) {
             alert('Chức năng mua hàng đang được phát triển');
-        }
-
-        function formatPrice(price) {
-            return new Intl.NumberFormat('vi-VN').format(price);
-        }
-
-        function updateCartCount() {
-            const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
-            const totalItems = cartItems.reduce((sum, item) => sum + item.quantity, 0);
-            document.querySelector('.gh p').textContent = `${totalItems} Sản phẩm`;
         }
 
         function clearCart() {

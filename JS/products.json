@@ -45,5 +45,133 @@
         "product_code": "1435c",
         "price": 1010000,
         "description": ""
+    },
+    {
+        "id": 7,
+        "images": "../IMG/Gimbal/hinh6.jpg",
+        "name": "DJI RS4 Pro Combo",
+        "product_code": "1234",
+        "price": 25690000,
+        "description": ""
+    },
+    {
+        "id": 8,
+        "images": "../IMG/Gimbal/hinh7.jpg ",
+        "name": "DJI Ronin 2 Pro Combo",
+        "product_code": "1234a",
+        "price": 219990000,
+        "description": ""
+    },
+    {
+        "id": 9,
+        "images": "../IMG/Gimbal/hinh8.jpg",
+        "name": "DJI RS 3",
+        "product_code": "1234b",
+        "price": 9390000,
+        "description": ""
+    },
+    {
+        "id": 10,
+        "images": "../IMG/Gimbal/hinh9.jpg",
+        "name": "DJI Ronin – SC (Combo)",
+        "product_code": "1234c",
+        "price": 9950000,
+        "description": ""
+    },
+    {
+        "id": 11,
+        "images": "../IMG/Gimbal/hinh10.jpg",
+        "name": "DJI RS 2 (Combo)",
+        "product_code": "1234d",
+        "price": 18390000,
+        "description": ""
+    },
+    {
+        "id": 12,
+        "images": "../IMG/Gimbal/hinh11.jpg",
+        "name": "DJI Ronin 2 Professional",
+        "product_code": "1234e",
+        "price": 179900000,
+        "description": ""
+    },
+    {
+        "id": 13,
+        "images": "../IMG/Micro/hinh13.webp",
+        "name": "Micro Cài Áo Hollyland Lark Max Lavalier Microphone",
+        "product_code": "2234",
+        "price": 649000,
+        "description": ""
+    },
+    {
+        "id": 14,
+        "images": "../IMG/Micro/hinh14.webp",
+        "name": "Micro Thu Âm Không Dây Dji Mic 2 - 2 Phát 1 Nhận",
+        "product_code": "2254",
+        "price": 7499000,
+        "description": ""
+    },
+    {
+        "id": 15,
+        "images": "../IMG/Micro/hinh15.webp",
+        "name": "Mic Thu Âm Không Dây Comica Vimo S-MI Black",
+        "product_code": "1748",
+        "price": 2750000,
+        "description": ""
+    },
+    {
+        "id": 16,
+        "images": "../IMG/Micro/hinh16.webp",
+        "name": "Hollyland Mars T1000 - Bộ Truyền Video Không Dây Mars T1000",
+        "product_code": "96765",
+        "price": 34500000,
+        "description": ""
+    },
+    {
+        "id": 17,
+        "images": "../IMG/Thẻ nhớ/hinh17.webp",
+        "name": "Đầu Đọc Thẻ Nhớ SD OTG SanDisk UHS-II Extreme Pro",
+        "product_code": "9988",
+        "price": 590000,
+        "description": ""
+    },
+    {
+        "id": 18,
+        "images": "../IMG/Thẻ nhớ/hinh18.webp",
+        "name": "Đầu Đọc Thẻ Nhớ Sony MRW CFexpress Type A - SD",
+        "product_code": "9786",
+        "price": 3150000,
+        "description": ""
+    },
+    {
+        "id": 19,
+        "images": "../IMG/Thẻ nhớ/hinh19.webp",
+        "name": "Đầu Đọc Thẻ Nhớ All In One Ugreen 3.0 - 30333",
+        "product_code": "5673",
+        "price": 290000,
+        "description": ""
+    },
+    {
+        "id": 20,
+        "images": "../IMG/Thẻ nhớ/hinh20.webp",
+        "name": "Thẻ Nhớ Sony SDXC SF-M Series Tough UHS-II",
+        "product_code": "2254",
+        "price": 3849000,
+        "description": ""
+    },
+    {
+        "id": 21,
+        "images": "../IMG/Thẻ nhớ/hinh21.webp",
+        "name": "Cáp Type-C To Type-C Đa Năng - 13cm - 240w - 8K",
+        "product_code": "5895",
+        "price": 149000,
+        "description": ""
+    },
+    {
+        "id": 22,
+        "images": "../IMG/Thẻ nhớ/hinh22.webp",
+        "name": "Thẻ Nhớ CFexpress Type-B Homan 2TB 1800MB/s0",
+        "product_code": "3796",
+        "price": 13899000,
+        "description": ""
     }
 ]

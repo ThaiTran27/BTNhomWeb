@@ -95,10 +95,27 @@
     </style>
     <script>
         function updateTotal() {
-            const price = parseFloat(document.getElementById("productPrice").innerText.replace(" VNĐ", ""));
-            const quantity = parseInt(document.getElementById("quantity").value);
-            const total = price * quantity;
-            document.getElementById("totalPrice").innerText = total.toLocaleString('vi-VN') + ".000 VNĐ";
+            try {
+                const priceElement = document.getElementById("productPrice");
+                const quantityElement = document.getElementById("quantity");
+                const totalElement = document.getElementById("totalPrice");
+
+                if (!priceElement || !quantityElement || !totalElement) {
+                    console.error("Không tìm thấy phần tử");
+                    return;
+                }
+
+                const price = parseFloat(priceElement.textContent.replace(/[^\d]/g, ''));
+                const quantity = parseInt(quantityElement.value) || 1;
+                const total = price * quantity;
+
+                totalElement.textContent = new Intl.NumberFormat('vi-VN', {
+                    style: 'currency',
+                    currency: 'VND'
+                }).format(total);
+            } catch (error) {
+                console.error("Lỗi khi cập nhật tổng tiền:", error);
+            }
         }
     </script>
 </head>
@@ -115,11 +132,11 @@
                 </div>
                 <div class="col-7">
                     <ul class="nav nav1" style="display: flex; gap: 30px; padding-top: 10px;">
-                        <li><a class="menu1 nav-link fs-5" style="color: black; text-decoration: none;" href="#">Khuyến mãi</a></li>
+                        <li><a class="menu1 nav-link fs-5" style="color: black; text-decoration: none;" href="../HTML/Thành viên.html">Thành viên</a></li>
                         <li><a class="menu1 nav-link fs-5" style="color: black; text-decoration: none;" href="../HTML/Giới Thiệu.html">Giới Thiệu</a></li>
                         <li><a class="menu1 nav-link fs-5" style="color: black; text-decoration: none;" href="../HTML/TinTuc.html">Tin tức</a></li>
                         <li><a class="menu1 nav-link fs-5" style="color: black; text-decoration: none;" href="../HTML/Liên hệ.html">Liên hệ</a></li>
-                        <li><a class="menu1 nav-link fs-5" style="color: black; text-decoration: none;" href="#">Sitemap</a></li>
+                        <li><a class="menu1 nav-link fs-5" style="color: black; text-decoration: none;" href="../HTML/Sitemap.html">Sitemap</a></li>
                     </ul>
 
                 </div>
@@ -155,7 +172,7 @@
                             <label for="quantity"><strong>Số lượng:</strong></label>
                             <input type="number" id="quantity" value="1" min="1" onchange="updateTotal()">
                         </div>
-                        <p><strong class="fs-5">Tổng tiền:</strong> <span id="totalPrice" class="total-price">
+                        <p><strong class="fs-5">Tổng tiền:</strong> <span id="totalPrice" class="total-price"> đ
                             </span></p>
                         <div class="btn-custom">
                             <button class="btn btn-primary" onclick="alert('Mua ngay thành công!')">Mua ngay</button>
@@ -171,7 +188,7 @@
                 <div class="row">
                     <!-- Company Info -->
                     <div class="col-md-4">
-                        <h5>CÔNG TY TNHH TM mệt muốn chết</h5>
+                        <h5>CÔNG TY TNHH TM MayanhTT</h5>
                         <p>Địa chỉ: 12 Nguyễn Văn Bảo, Phường 4, Gò Vấp, Hồ Chí Minh</p>
                         <p>Điện thoại: (028).39851932</p>
                         <p>Di động: 0943 007 107 - 0948 007 107</p>

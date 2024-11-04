@@ -4,14 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trang chủ</title>
+    <title></title>
     <link rel="stylesheet" href="../bootstrap-5.3.3-dist/css/bootstrap.min.css">
     <script src="../bootstrap-5.3.3-dist/js/jquery-3.7.1.min.js"></script>
     <script src="../bootstrap-5.3.3-dist/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="../CSS/Home.css">
     <style>
-        /* Kiểu */
-        
         * {
             margin: 0;
             padding: 0;
@@ -75,15 +72,13 @@
                 </div>
                 <div class="col-7">
                     <ul class="nav nav1" style="display: flex; gap: 30px; padding-top: 10px;">
-                        <li><a class="menu1 nav-link fs-5" style="color: black; text-decoration: none;" href="#">Khuyến
-                                mãi</a></li>
-                        <li><a class="menu1 nav-link fs-5" style="color: black; text-decoration: none;" href="#">Thành
-                                toán</a></li>
-                        <li><a class="menu1 nav-link fs-5" style="color: black; text-decoration: none;" href="#">Tin
+                        <li><a class="menu1 nav-link fs-5" style="color: black; text-decoration: none;" href="../HTML/Thành viên.html">Thành viên</a></li>
+                        <li><a class="menu1 nav-link fs-5" style="color: black; text-decoration: none;" href="../HTML/Giới Thiệu.html">Giới thiệu</a></li>
+                        <li><a class="menu1 nav-link fs-5" style="color: black; text-decoration: none;" href="../HTML/TinTuc.html">Tin
                                 tức</a></li>
-                        <li><a class="menu1 nav-link fs-5" style="color: black; text-decoration: none;" href="#">Liên
+                        <li><a class="menu1 nav-link fs-5" style="color: black; text-decoration: none;" href="../HTML/Liên hệ.html">Liên
                                 hệ</a></li>
-                        <li><a class="menu1 nav-link fs-5" style="color: black; text-decoration: none;" href="#">Sitemap</a></li>
+                        <li><a class="menu1 nav-link fs-5" style="color: black; text-decoration: none;" href="../HTML/Sitemap.html">Sitemap</a></li>
                     </ul>
                 </div>
                 <!-- Hộp tìm kiếm -->
@@ -107,9 +102,9 @@
                     <div class="mb-4">
                         <label for="brandFilter">NHÀ SẢN XUẤT</label>
                         <div>
-                            <input type="checkbox" id="sizeMedium" /> 1<br>
-                            <input type="checkbox" id="sizeLarge" /> 1<br>
-                            <input type="checkbox" id="sizeSmall" /> 1
+                            <input type="checkbox" id="sizeMedium" /> Canon<br>
+                            <input type="checkbox" id="sizeLarge" /> Nikon<br>
+                            <input type="checkbox" id="sizeSmall" /> Benro
                         </div>
                     </div>
 
@@ -131,96 +126,88 @@
                         </select>
                     </div>
                     <div class="row" id="productList">
-                        <!-- Thẻ sản phẩm 1 -->
-                        <div class="col-md-4 mb-3 product-card" data-price="2199000" data-id="1">
-                            <div class="card">
-                                <img src="../IMG/Filter - Kính Lọc/hinh1.webp" class="card-img-top" alt="Hình ảnh sản phẩm">
-                                <div class="card-body">
-                                    <h5 class="card-title">Filter - Kính Lọc Kase ACG Black Mist 1/4 86mm</h5>
-                                    <p class="card-text">690.000 đ</p>
-                                    <div class="btn-group">
-                                        <button class="btn btn-secondary w-50" data-bs-toggle="modal" data-bs-target="#addToCartModal">THÊM VÀO GIỎ</button>
-                                        <button class="btn btn-primary w-50">MUA NGAY</button>
+                        <div class="row" id="productList">
+                            <!-- Thẻ sản phẩm 1 -->
+                            <div class="col-md-4 mb-3 product-card" data-price="690000" data-id="1">
+                                <div class="card">
+                                    <img src="../IMG/Filter - Kính Lọc/hinh1.webp" class="card-img-top" alt="Hình ảnh sản phẩm">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Filter - Kính Lọc Kase ACG Black Mist 1/4 86mm</h5>
+                                        <p class="card-text">690.000 đ</p>
+                                        <div class="btn-group">
+                                            <button class="btn btn-secondary" onclick="addToCart(1, 'Filter - Kính Lọc Kase ACG Black Mist 1/4 86mm', 690000)">Thêm vào giỏ</button>
+                                            <button class="btn btn-primary w-50">MUA NGAY</button>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <!-- Thẻ sản phẩm 2 -->
-                        <div class="col-md-4 mb-3 product-card" data-price="2199000" data-id="2">
-                            <div class="card">
-                                <a href="">
+                            <!-- Thẻ sản phẩm 2 -->
+                            <div class="col-md-4 mb-3 product-card" data-price="2599000" data-id="2">
+                                <div class="card">
                                     <img src="../IMG/Filter - Kính Lọc/hinh2.webp" class="card-img-top" alt="Hình ảnh sản phẩm">
-                                </a>
-                                <div class="card-body">
-                                    <h5 class="card-title">Filter - Kính Lọc Kase MC-UV III 95mm</h5>
-                                    <p class="card-text">2.599.000 đ</p>
-                                    <div class="btn-group">
-                                        <button class="btn btn-secondary w-50" data-bs-toggle="modal" data-bs-target="#addToCartModal">THÊM VÀO GIỎ</button>
-                                        <button class="btn btn-primary w-50">MUA NGAY</button>
+                                    <div class="card-body">
+                                        <h5 class="card-title">Filter - Kính Lọc Kase MC-UV III 95mm</h5>
+                                        <p class="card-text">2.599.000 đ</p>
+                                        <div class="btn-group">
+                                            <button class="btn btn-secondary" onclick="addToCart(2, 'Filter - Kính Lọc Kase MC-UV III 95mm', 2599000)">Thêm vào giỏ</button>
+                                            <button class="btn btn-primary w-50">MUA NGAY</button>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <!-- Thẻ sản phẩm 3 -->
-                        <div class="col-md-4 mb-3 product-card" data-price="2199000" data-id="3">
-                            <div class="card">
-                                <a href="">
+                            <!-- Thẻ sản phẩm 3 -->
+                            <div class="col-md-4 mb-3 product-card" data-price="649000" data-id="3">
+                                <div class="card">
                                     <img src="../IMG/Filter - Kính Lọc/hinh3.webp" class="card-img-top" alt="Hình ảnh sản phẩm">
-                                </a>
-                                <div class="card-body">
-                                    <h5 class="card-title">Filter - Kính Lọc MECO Black Mist 1/4 82mm</h5>
-                                    <p class="card-text">649.000 đ</p>
-                                    <div class="btn-group">
-                                        <button class="btn btn-secondary w-50" data-bs-toggle="modal" data-bs-target="#addTo CartModal">THÊM VÀO GIỎ</button>
-                                        <button class="btn btn-primary w-50">MUA NGAY</button>
+                                    <div class="card-body">
+                                        <h5 class="card-title">Filter - Kính Lọc MECO Black Mist 1/4 82mm</h5>
+                                        <p class="card-text">649.000 đ</p>
+                                        <div class="btn-group">
+                                            <button class="btn btn-secondary" onclick="addToCart(3, 'Filter - Kính Lọc MECO Black Mist 1/4 82mm', 649000)">Thêm vào giỏ</button>
+                                            <button class="btn btn-primary w-50">MUA NGAY</button>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <!-- Thẻ sản phẩm 4-->
-                        <div class="col-md-4 mb-3 product-card" data-price="2199000" data-id="4">
-                            <div class="card">
-                                <a href="">
+                            <!-- Thẻ sản phẩm 4-->
+                            <div class="col-md-4 mb-3 product-card" data-price="299000" data-id="4">
+                                <div class="card">
                                     <img src="../IMG/Filter - Kính Lọc/hinh4.webp" class="card-img-top" alt="Hình ảnh sản phẩm">
-                                </a>
-                                <div class="card-body">
-                                    <h5 class="card-title">Filter - Kính Lọc MECO CPL 1-8 Stops</h5>
-                                    <p class="card-text">299.000 đ</p>
-                                    <div class="btn-group">
-                                        <button class="btn btn-secondary w-50" data-bs-toggle="modal" data-bs-target="#addToCartModal">THÊM VÀO GIỎ</button>
-                                        <button class="btn btn-primary w-50">MUA NGAY</button>
+                                    <div class="card-body">
+                                        <h5 class="card-title">Filter - Kính Lọc MECO CPL 1-8 Stops</h5>
+                                        <p class="card-text">299.000 đ</p>
+                                        <div class="btn-group">
+                                            <button class="btn btn-secondary" onclick="addToCart(4, 'Filter - Kính Lọc MECO CPL 1-8 Stops', 299000)">Thêm vào giỏ</button>
+                                            <button class="btn btn-primary w-50">MUA NGAY</button>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <!-- Thẻ sản phẩm 5 -->
-                        <div class="col-md-4 mb-3 product-card" data-price="2199000" data-id="5">
-                            <div class="card">
-                                <a href="">
+                            <!-- Thẻ sản phẩm 5 -->
+                            <div class="col-md-4 mb-3 product-card" data-price="359000" data-id="5">
+                                <div class="card">
                                     <img src="../IMG/Filter - Kính Lọc/hinh5.webp" class="card-img-top" alt="Hình ảnh sản phẩm">
-                                </a>
-                                <div class="card-body">
-                                    <h5 class="card-title">Filter - Kính Lọc MECO Variable ND-X 1-8 Stops</h5>
-                                    <p class="card-text">359.000 đ</p>
-                                    <div class="btn-group">
-                                        <button class="btn btn-secondary w-50" data-bs-toggle="modal" data-bs-target="#addToCartModal">THÊM VÀO GIỎ</button>
-                                        <button class="btn btn-primary w-50">MUA NGAY</button>
+                                    <div class="card-body">
+                                        <h5 class="card-title">Filter - Kính Lọc MECO Variable ND-X 1-8 Stops</h5>
+                                        <p class="card-text">359.000 đ</p>
+                                        <div class="btn-group">
+                                            <button class="btn btn-secondary" onclick="addToCart(5, 'Filter - Kính Lọc MECO Variable ND-X 1-8 Stops', 359000)">Thêm vào giỏ</button>
+                                            <button class="btn btn-primary w-50">MUA NGAY</button>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <!-- Thẻ sản phẩm 6 -->
-                        <div class="col-md-4 mb-3 product-card" data-price="2199000" data-id="6">
-                            <div class="card">
-                                <a href="">
+                            <!-- Thẻ sản phẩm 6 -->
+                            <div class="col-md-4 mb-3 product-card" data-price="1010000" data-id="6">
+                                <div class="card">
                                     <img src="../IMG/Filter - Kính Lọc/hinh6.webp" class="card-img-top" alt="Hình ảnh sản phẩm">
-                                </a>
-                                <div class="card-body">
-                                    <h5 class="card-title">Filter - Kính Lọc HOYA HMC ND64 - Giảm 06 F-stops</h5>
-                                    <p class="card-text">1.010.000 đ</p>
-                                    <div class="btn-group">
-                                        <button class="btn btn-secondary w-50" data-bs-toggle="modal" data-bs-target="#addToCartModal">THÊM VÀO GIỎ</button>
-                                        <button class="btn btn-primary w-50">MUA NGAY</button>
+                                    <div class="card-body">
+                                        <h5 class="card-title">Filter - Kính Lọc HOYA HMC ND64 - Giảm 06 F-stops</h5>
+                                        <p class="card-text">1.010.000 đ</p>
+                                        <div class="btn-group">
+                                            <button class="btn btn-secondary" onclick="addToCart(6, 'Filter - Kính Lọc HOYA HMC ND64 - Giảm 06 F-stops', 1010000)">Thêm vào giỏ</button>
+                                            <button class="btn btn-primary w-50">MUA NGAY</button>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -237,7 +224,7 @@
                 <div class="row">
                     <!-- Thông tin công ty -->
                     <div class="col-md-4">
-                        <h5>CÔNG TY TNHH TM mệt muốn chết</h5>
+                        <h5>CÔNG TY TNHH TM MayanhTT</h5>
                         <p> Địa chỉ: 12 Nguyễn Văn Bảo, Phường 4, Gò Vấp, Hồ Chí Minh</p>
                         <p>Điện thoại: (028).39851932</p>
                         <p>Di động: 0943 007 107 - 0948 007 107</p>
@@ -470,6 +457,41 @@
             });
         });
     </script>
+    <script>
+        function addToCart(productId, productName, productPrice) {
+            // Lấy giỏ hàng hiện tại từ localStorage hoặc tạo mới nếu chưa có
+            let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+
+            // Kiểm tra xem sản phẩm đã có trong giỏ hàng chưa
+            const existingItem = cartItems.find(item => item.id === productId);
+
+            if (existingItem) {
+                // Nếu sản phẩm đã tồn tại, tăng số lượng
+                existingItem.quantity += 1;
+                existingItem.total = existingItem.quantity * existingItem.price;
+            } else {
+                // Nếu sản phẩm chưa tồn tại, thêm mới
+                cartItems.push({
+                    id: productId,
+                    name: productName,
+                    price: productPrice,
+                    quantity: 1,
+                    total: productPrice
+                });
+            }
+
+            // Lưu giỏ hàng mới vào localStorage
+            localStorage.setItem('cartItems', JSON.stringify(cartItems));
+
+            // Hiển thị thông báo thành công
+            alert('Đã thêm sản phẩm vào giỏ hàng!');
+
+            // Cập nhật số lượng sản phẩm hiển thị trên icon giỏ hàng (nếu có)
+            updateCartCount();
+        }
+    </script>
 </body>
+
+</html>
 
 </html>

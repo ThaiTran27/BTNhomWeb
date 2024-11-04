@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="../bootstrap-5.3.3-dist/css/bootstrap.min.css">
+    <script src="../bootstrap-5.3.3-dist/js/jquery-3.7.1.min.js"></script>
+    <script src="../bootstrap-5.3.3-dist/js/bootstrap.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        .header2 {
+            background: linear-gradient(45deg, lightblue 30%, lightgreen 70%);
+        }
+        
+        .menu1:hover {
+            color: red;
+        }
+        
+        .footer {
+            background-color: #222;
+            color: white;
+            padding: 20px 0;
+        }
+        
+        .footer a {
+            color: #fff;
+            text-decoration: none;
+        }
+        
+        .footer a:hover {
+            color: #ff5e00;
+        }
+        
+        .filter-sidebar h5 {
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+        
+        .product-card img {
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .product-card h5 {
+            font-size: 16px;
+            font-weight: bold;
+        }
+        
+        .btn-group {
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid" style="padding: 0px;">
+        <!-- Tiêu đề -->
+        <div class="header row">
+            <div class="col d-flex justify-content-between align-items-center">
+                <!-- Liên kết điều hướng -->
+                <div class="col-1 mt-1 ms-2 text-center">
+                    <a href="../HTML/Home.html">
+                        <img style=" width: 100%;" src="../IMG/Logo.png" alt="Logo Công ty">
+                    </a>
+                </div>
+                <div class="col-7">
+                    <ul class="nav nav1" style="display: flex; gap: 30px; padding-top: 10px;">
+                        <li><a class="menu1 nav-link fs-5" style="color: black; text-decoration: none;" href="../HTML/Thành viên.html">Thành viên</a></li>
+                        <li><a class="menu1 nav-link fs-5" style="color: black; text-decoration: none;" href="../HTML/Giới Thiệu.html">Giới thiệu</a></li>
+                        <li><a class="menu1 nav-link fs-5" style="color: black; text-decoration: none;" href="../HTML/TinTuc.html">Tin
+                                tức</a></li>
+                        <li><a class="menu1 nav-link fs-5" style="color: black; text-decoration: none;" href="../HTML/Liên hệ.html">Liên
+                                hệ</a></li>
+                        <li><a class="menu1 nav-link fs-5" style="color: black; text-decoration: none;" href="../HTML/Sitemap.html">Sitemap</a></li>
+                    </ul>
+                </div>
+                <!-- Hộp tìm kiếm -->
+                <div class="col-2" style="display: flex; align-items: center;">
+                    <input type="search" placeholder="Tìm kiếm sản phẩm" style="border-radius: 15px; width: 250px; padding: 5px 10px; border: 1px solid #ccc;">
+                </div>
+                <!-- Liên kết đăng nhập và biểu tượng giỏ hàng -->
+                <a id="loginLink" href="../HTML/DangNhap.html" style="color: black; text-decoration: none; font-size: 16px; margin-left: 20px;" data-bs-toggle="modal" data-bs-target="#modalId">Đăng nhập</a>
+                <a href="../HTML/gioHang.html" style="margin-left: 15px;">
+                    <img style="height: 30px;" src="../IMG/Remove-bg.ai_1729655897749.png" alt="Giỏ hàng" aria-label="Giỏ hàng">
+                </a>
+            </div>
+        </div>
+        <!-- Header -->
+        <!-- Section with Filters and Product Listing -->
+        <section class="container mt- 5 section">
+            <div class="row">
+                <!-- Thanh bên cho Bộ lọc -->
+                <aside aside class="col-md-3 filter-sidebar">
+                    <h5>TÌM KIẾM PHỤ KIỆN</h5>
+                    <div class="mb-4">
+                        <label for="brandFilter">NHÀ SẢN XUẤT</label>
+                        <div>
+                            <input type="checkbox" id="sizeMedium" /> Canon<br>
+                            <input type="checkbox" id="sizeLarge" /> Nikon<br>
+                            <input type="checkbox" id="sizeSmall" /> Benro
+                        </div>
+                    </div>
+
+                    <div class="mb-4">
+                        <label for="priceFilter">GIÁ</label>
+                        <input type="range" min="1" max="25000000" step="100000" id="priceRange">
+                        <div id="priceValue">1 đ - 0 đ</div>
+                    </div>
+                    <button class="btn btn-primary">ĐẶT HÀNG</button>
+                </aside>
+                <!-- Danh sách sản phẩm -->
+                <div class="col-md-9">
+                    <div class="d-flex justify-content-between align-items-center mb-4">
+                        <h2>Thẻ nhớ</h2>
+                        <select class="form-select w-auto" aria-label="Sắp xếp theo">
+                            <option selected>Nổi bật</option>
+                            <option value="1">Giá tăng dần</option>
+                            <option value="2">Giá giảm dần</option>
+                        </select>
+                    </div>
+                    <div class="row" id="productList">
+                        <div class="row" id="productList">
+                            <!-- Thẻ sản phẩm 17 -->
+                            <div class="col-md-4 mb-3 product-card" data-price="590000" data-id="17">
+                                <div class="card">
+                                    <img src="../IMG/Thẻ nhớ/hinh17.webp" class="card-img-top" alt="Hình ảnh sản phẩm">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Đầu Đọc Thẻ Nhớ SD OTG SanDisk UHS-II Extreme Pro</h5>
+                                        <p class="card-text">590.000 đ</p>
+                                        <div class="btn-group">
+                                            <button class="btn btn-secondary" onclick="addToCart(17, 'Đầu Đọc Thẻ Nhớ SD OTG SanDisk UHS-II Extreme Pro', 590000)">Thêm vào
+                                                giỏ</button>
+                                            <button class="btn btn-primary w-50">MUA NGAY</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Thẻ sản phẩm 18 -->
+                            <div class="col-md-4 mb-3 product-card" data-price="3150000" data-id="18 ">
+                                <div class=" card ">
+                                    <img src="../IMG/Thẻ nhớ/hinh18.webp" class=" card-img-top " alt=" Hình ảnh sản phẩm ">
+                                    <div class=" card-body ">
+                                        <h5 class=" card-title ">Đầu Đọc Thẻ Nhớ Sony MRW CFexpress Type A - SD </h5>
+                                        <p class=" card-text ">3.150.000 đ</p>
+                                        <div class=" btn-group ">
+                                            <button class=" btn btn-secondary " onclick=" addToCart(18, 'Đầu Đọc Thẻ Nhớ Sony MRW CFexpress Type A - SD' , 3150000) ">Thêm vào giỏ</button>
+                                            <button class=" btn btn-primary w-50 ">MUA NGAY</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Thẻ sản phẩm 19 -->
+                            <div class=" col-md-4 mb-3 product-card " data-price="290000" data-id=" 19 ">
+                                <div class=" card ">
+                                    <img src=" ../IMG/Thẻ nhớ/hinh19.webp " class=" card-img-top " alt=" Hình ảnh sản phẩm ">
+                                    <div class=" card-body ">
+                                        <h5 class=" card-title ">Đầu Đọc Thẻ Nhớ All In One Ugreen 3.0 - 30333 </h5>
+                                        <p class=" card-text ">290.0000 đ</p>
+                                        <div class=" btn-group ">
+                                            <button class=" btn btn-secondary " onclick=" addToCart(19, 'Đầu Đọc Thẻ Nhớ All In One Ugreen 3.0 - 30333 ' , 290000) ">Thêm vào giỏ</button>
+                                            <button class=" btn btn-primary w-50 ">MUA NGAY</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Thẻ sản phẩm 20 -->
+                            <div class=" col-md-4 mb-3 product-card " data-price=" 3849000 " data-id=" 20 ">
+                                <div class=" card ">
+                                    <img src=" ../IMG/Thẻ nhớ/hinh20.webp " class=" card-img-top " alt=" Hình ảnh sản phẩm ">
+                                    <div class=" card-body ">
+                                        <h5 class=" card-title ">Thẻ Nhớ Sony SDXC SF-M Series Tough UHS-II</h5>
+                                        <p class=" card-text ">3.849.000 đ</p>
+                                        <div class=" btn-group ">
+                                            <button class=" btn btn-secondary " onclick=" addToCart(20, 'Thẻ Nhớ Sony SDXC SF-M Series Tough UHS-II ' , 3849000) ">Thêm vào giỏ</button>
+                                            <button class=" btn btn-primary w-50 ">MUA NGAY</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Thẻ sản phẩm 21 -->
+                            <div class=" col-md-4 mb-3 product-card " data-price=" 149000 " data-id=" 21 ">
+                                <div class=" card ">
+                                    <img src=" ../IMG/Thẻ nhớ/hinh21.webp " class=" card-img-top " alt=" Hình ảnh sản phẩm ">
+                                    <div class=" card-body ">
+                                        <h5 class=" card-title ">Cáp Type-C To Type-C Đa Năng - 13cm - 240w - 8K</h5>
+                                        <p class=" card-text ">149.000 đ</p>
+                                        <div class=" btn-group ">
+                                            <button class=" btn btn-secondary " onclick=" addToCart(21, 'Cáp Type-C To Type-C Đa Năng - 13cm - 240w - 8K ' , 149000) ">Thêm vào giỏ</button>
+                                            <button class=" btn btn-primary w-50 ">MUA NGAY</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Thẻ sản phẩm 22 -->
+                            <div class=" col-md-4 mb-3 product-card " data-price=" 13899000 " data-id=" 22 ">
+                                <div class=" card ">
+                                    <img src=" ../IMG/Thẻ nhớ/hinh22.webp " class=" card-img-top " alt=" Hình ảnh sản phẩm ">
+                                    <div class=" card-body ">
+                                        <h5 class=" card-title ">Thẻ Nhớ CFexpress Type-B Homan 2TB 1800MB/s0</h5>
+                                        <p class=" card-text ">13.899.000 đ</p>
+                                        <div class=" btn-group ">
+                                            <button class=" btn btn-secondary " onclick=" addToCart(22, 'Thẻ Nhớ CFexpress Type-B Homan 2TB 1800MB/s0 ' , 13899000) ">Thêm vào giỏ</button>
+                                            <button class=" btn btn-primary w-50 ">MUA NGAY</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--  -->
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Kết thúc phần -->
+        <!-- Chân trang -->
+        <footer class=" footer ">
+            <div class=" container ">
+                <div class=" row ">
+                    <!-- Thông tin công ty -->
+                    <div class=" col-md-4 ">
+                        <h5>CÔNG TY TNHH TM MayanhTT</h5>
+                        <p> Địa chỉ: 12 Nguyễn Văn Bảo, Phường 4, Gò Vấp, Hồ Chí Minh</p>
+                        <p>Điện thoại: (028).39851932</p>
+                        <p>Di động: 0943 007 107 - 0948 007 107</p>
+                        <p>Email: <a href=" mailto:xedaptructuyen@gmail.com ">thaitram@gmail.com </a></p>
+                    </div>
+                    <!-- Liên kết thông tin -->
+                    <div class=" col-md-2 ">
+                        <h5>THÔNG TIN</h5>
+                        <ul class=" list-unstyled ">
+                            <li><a href=" # ">Bảo mật thông tin</a></li>
+                            <li><a href=" # ">Quy định chung</a></li>
+                        </ul>
+                    </div>
+                    <!-- Links giới thiệu -->
+                    <div class=" col-md-2 ">
+                        <h5>GIỚI THIỆU</h5>
+                        <ul class=" list-unstyled ">
+                            <li><a href=" # ">Giới thiệu</a></li>
+                            <li><a href=" # ">Liên hệ</a></li>
+                        </ul>
+                    </div>
+                    <!-- Liên kết dịch vụ -->
+                    <div class=" col-md-2 ">
+                        <h5>DỊCH VỤ</h5>
+                        <ul class=" list-unstyled ">
+                            <li><a href=" # ">DV Bán hàng</a></li>
+                            <li><a href=" # ">DV Giao hàng</a></li>
+                        </ul>
+                    </div>
+                    <!-- Biểu tượng xã hội -->
+                    <div class=" col-md-2 ">
+                        <h5>LIÊN KẾT THÚC TÔI</h5>
+                        <div class=" social-icons ">
+                            <a href=" # "><img src=" ../IMG/logo face.png " width=" 24 " alt=" face "></a>
+                            <a href=" # "><img src=" ../IMG/logo google.png " width=" 24 " alt=" google "></a>
+                            <a href=" # "><img src=" ../IMG/logo P.png " width=" 24 " alt=" P "></a>
+                            <a href=" # "><img src=" ../IMG/logo X.png " width=" 24 " alt=" X "></a>
+                        </div>
+                    </div>
+                </div>
+                <div class=" row mt-4 ">
+                    <div class=" col-12 text-center ">
+                        <img src=" ../IMG/logofooter.png " width=" 150 " alt=" Bộ Công Thương ">
+                        <h5>ĐÃ THÔNG BÁO - BỘ CÔNG THƯƠNG</h5>
+                        <p>Bản quyền 2024 Phụ Kiện Máy Ảnh Trực Tuyến</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- -->
+    </div>
+    <!-- Modal -->
+    <div class=" modal fade " id=" modalId " tabindex=" -1 " role=" dialog " aria-labelledby=" modalTitleId " aria-hidden=" true ">
+        <div class=" modal-dialog " role=" document ">
+            <div class=" modal-content ">
+                <div class=" modal-header " style=" justify-content: center; border-bottom: none; ">
+                    <h3 class=" modal-title " id=" modalTitleId ">Thành viên </h3>
+                    <button type=" button " class=" btn-close " data-bs-dismiss=" modal " aria-label=" Đóng " style=" position: absolute; top: 10px; right:10px; "></button>
+                </div>
+                <div class=" modal-body text-center ">
+                    <p>Vui lòng đăng nhập tài khoản TMember để xem ưu đãi và thanh toán dễ dàng hơn.</p>
+                </div>
+                <div class=" modal-footer " style=" justify-content: center; gap: 10px; border-top: none; ">
+                    <button type=" button " class=" btn " style=" background-color: #FF5757; color: white; width: 120px; height: 40px; border-radius: 5px; display: flex; align-items: center; justify-content: center; ">
+                        <a class=" nav-link " href=" ../HTML/DangNhap.html ">Đăng nhập</a>
+                    </button>
+                    <button type=" button " class=" btn " style=" background-color: #FF4500; color: white; width: 120px; height: 40px; border-radius: 5px; display: flex; align-items: center; justify-content: center; ">
+                        <a class=" nav-link " href=" ../HTML/Dangky.html ">Đăng ký</a>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal thêm vào giỏ hàng -->
+    <div class=" modal fade " id=" addToCartModal " tabindex=" -1 " role=" dialog " aria-labelledby=" addToCartModalTitle " aria-hidden=" true ">
+        <div class=" modal-dialog " role=" document ">
+            <div class=" modal-content ">
+                <div class=" modal-header " style=" justify-content: center; border-bottom: none; ">
+                    <h3 class=" modal-title " id=" addToCartModalTitle ">THÊM VÀO GIỎ</h3>
+                    <button type=" button " class=" btn-close " data-bs-dismiss=" modal " aria-label=" Đóng " style=" position: absolute; top: 10px; right:10px; "></button>
+                </div>
+                <div class=" modal-body ">
+                    <form>
+                        <div class=" mb-3 ">
+                            <label for=" productName " class=" form-label ">Tên sản phẩm:</label>
+                            <input type=" text " class=" form-control " id=" productName " readonly>
+                        </div>
+                        <div class=" mb-3 ">
+                            <label for=" quantity " class=" form-label ">Số lượng:</label>
+                            <input type=" number " class=" form-control " id=" quantity " value=" 1 ">
+                        </div>
+                        <div class=" mb-3 ">
+                            <label for=" unitPrice " class=" form-label ">Đơn giá:</label>
+                            <input type=" text " class=" form-control " id=" unitPrice " readonly>
+                        </div>
+                        <div class=" mb-3 ">
+                            <label for=" totalPrice " class=" form-label ">Tổng giá tiền:</label>
+                            <input type=" text " class=" form-control " id=" totalPrice " readonly>
+                        </div>
+                    </form>
+                </div>
+                <div class=" modal-footer " style=" justify-content: center; gap: 10px; border-top: none; ">
+                    <button type=" button " class=" btn " style=" background-color: #FF5757; color: white; width: 120px; height: 40px; border-radius: 5px; display: flex; align-items: center; justify-content: center; " data-bs-dismiss=" modal ">HỦY</button>
+                    <button type=" button " class=" btn " style=" background-color: #FF4500; color: white; width: 120px; height: 40px; border-radius: 5px; display: flex; align-items: center; justify-content: center; " id=" addToCart ">THÊM VÀO GIỎ</button>
+                </div>
+            </div>
+        </div>s
+    </div>
+    <!-- Của json chi tiet san pham  -->
+    <script>
+        // Thêm event listener cho tất cả các nút " Xem chi tiết "
+        document.querySelectorAll('.btn-primary ').forEach(button => {
+            button.addEventListener('click ', function() {
+                const productCard = this.closest('.product-card ');
+                if (productCard) {
+                    const productId = productCard.getAttribute('data-id ');
+                    if (productId) {
+                        // Chuyển hướng đến trang chi tiết sản phẩm với ID tương ứng
+                        window.location.href = `Chi%20tiết%20sản%20phẩm.html?id=${productId}`;
+                    }
+                }
+            });
+        });
+
+        // Thêm code để xử lý hiển thị chi tiết sản phẩm
+        document.addEventListener(" DOMContentLoaded ", function() {
+            // Lấy ID sản phẩm từ URL
+            const urlParams = new URLSearchParams(window.location.search);
+            const productId = urlParams.get('id ');
+
+            if (productId) {
+                // Tải dữ liệu sản phẩm từ file JSON
+                fetch('../JS/products.json ')
+                    .then(response => response.json())
+                    .then(products => {
+                        // Tìm sản phẩm theo ID
+                        const product = products.find(p => p.id === productId);
+                        if (product) {
+                            // Cập nhật thông tin sản phẩm trên trang
+                            updateProductDetails(product);
+                        } else {
+                            console.error('Không tìm thấy sản phẩm ');
+                        }
+                    })
+                    .catch(error => console.error('Lỗi khi tải dữ liệu: ', error));
+            }
+        });
+
+        // Hàm cập nhật thông tin chi tiết sản phẩm
+        function updateProductDetails(product) {
+            // Cập nhật tên sản phẩm
+            document.querySelector('.product-details h3 ').textContent = product.name;
+
+            // Cập nhật giá
+            document.getElementById('productPrice ').textContent = `${product.price.toLocaleString('vi-VN ')}₫`;
+
+            // Cập nhật mã sản phẩm
+            document.querySelector('.product-details p:nth-of-type(3) ').textContent = `Mã sản phẩm: ${product.product_code}`;
+
+            // Cập nhật mô tả
+            document.querySelector('.product-details p:nth-of-type(5) ').textContent = `Mô tả: ${product.description}`;
+
+            // Cập nhật hình ảnh
+            const productImage = document.querySelector('.product-details img ');
+            productImage.src = product.images;
+            productImage.alt = product.name;
+
+            // Cập nhật tổng tiền ban đầu
+            updateTotal();
+        }
+
+        // Hàm cập nhật tổng tiền
+        function updateTotal() {
+            const price = parseFloat(document.getElementById(" productPrice ").textContent.replace(/[^\d]/g, ' '));
+            const quantity = parseInt(document.getElementById(" quantity ").value);
+            const total = price * quantity;
+            document.getElementById(" totalPrice ").textContent = `${total.toLocaleString('vi-VN ')}₫`;
+        }
+    </script>
+    <!--  -->
+    <script>
+        document.addEventListener(" DOMContentLoaded ", function() {
+            const priceRange = document.getElementById(" priceRange ");
+            const priceValue = document.getElementById(" priceValue ");
+            const productList = document.getElementById(" productList ");
+            const products = Array.from(productList.getElementsByClassName(" product-card "));
+            const addToCartModal = new bootstrap.Modal(document.getElementById(" addToCartModal ")); // Khởi tạo modal Bootstrap
+            const addToCartModalTitle = document.getElementById(" addToCartModalTitle ");
+            const productName = document.getElementById(" productName ");
+            const quantity = document.getElementById(" quantity ");
+            const unitPrice = document.getElementById(" unitPrice ");
+            const totalPrice = document.getElementById(" totalPrice ");
+            const addToCart = document.getElementById(" addToCart ");
+
+            // Cập nhật giá trị phạm vi giá hiển thị và lọc sản phẩm
+            priceRange.addEventListener(" input ", function() {
+                const maxPrice = parseInt(priceRange.value);
+                priceValue.textContent = `1 đ - ${maxPrice.toLocaleString('vi-VN ')} đ`;
+                // Lọc sản phẩm dựa trên giá
+                products.forEach(product => {
+                    const productPrice = parseInt(product.getAttribute(" data-price "));
+                    if (productPrice <= maxPrice) {
+                        product.style.display = " block ";
+                    } else {
+                        product.style.display = " none ";
+                    }
+                });
+            });
+
+            // Hiển thị ban đầu tất cả các sản phẩm
+            const initMaxPrice = parseInt(priceRange.value);
+            priceValue.textContent = `1 đ - ${initMaxPrice.toLocaleString('vi-VN ')} đ`;
+
+            // Xử lý sự kiện thêm vào giỏ hàng
+            products.forEach(product => {
+                const addToCartButton = product.querySelector(" .btn-secondary ");
+                addToCartButton.addEventListener(" click ", function() {
+                    const productTitle = product.querySelector(" .card-title ").textContent;
+                    const productPrice = parseInt(product.getAttribute(" data-price "));
+                    productName.value = productTitle;
+                    unitPrice.value = productPrice.toLocaleString('vi-VN ') + " đ ";
+                    totalPrice.value = (productPrice * parseInt(quantity.value)).toLocaleString('vi-VN ') + " đ ";
+                });
+            });
+
+            // Xử lý sự kiện thêm vào giỏ hàng
+            addToCart.addEventListener(" click ", function() {
+                alert(" Đã thêm vào giỏ hàng thành công! ");
+                addToCartModal.hide(); // Đóng modal
+            });
+        });
+    </script>
+    <script>
+        function addToCart(productId, productName, productPrice) {
+            // Lấy giỏ hàng hiện tại từ localStorage hoặc tạo mới nếu chưa có
+            let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+
+            // Kiểm tra xem sản phẩm đã có trong giỏ hàng chưa
+            const existingItem = cartItems.find(item => item.id === productId);
+
+            if (existingItem) {
+                // Nếu sản phẩm đã tồn tại, tăng số lượng
+                existingItem.quantity += 1;
+                existingItem.total = existingItem.quantity * existingItem.price;
+            } else {
+                // Nếu sản phẩm chưa tồn tại, thêm mới
+                cartItems.push({
+                    id: productId,
+                    name: productName,
+                    price: productPrice,
+                    quantity: 1,
+                    total: productPrice
+                });
+            }
+
+            // Lưu giỏ hàng mới vào localStorage
+            localStorage.setItem('cartItems', JSON.stringify(cartItems));
+
+            // Hiển thị thông báo thành công
+            alert('Đã thêm sản phẩm vào giỏ hàng!');
+
+            // Cập nhật số lượng sản phẩm hiển thị trên icon giỏ hàng (nếu có)
+            updateCartCount();
+        }
+
+        function updateCartCount() {
+            const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+            const totalItems = cartItems.reduce((sum, item) => sum + item.quantity, 0);
+            // Giả sử bạn có một phần tử hiển thị số lượng sản phẩm trong giỏ hàng
+            const cartCountElement = document.getElementById('cart-count');
+            if (cartCountElement) {
+                cartCountElement.textContent = totalItems;
+            }
+        }
+        // 
+        document.querySelectorAll('.btn-primary').forEach(button => {
+            button.addEventListener('click', function() {
+                const productCard = this.closest('.product-card');
+                if (productCard) {
+                    const productId = productCard.getAttribute('data-id');
+                    if (productId) {
+                        // Chuyển hướng đến trang chi tiết sản phẩm với ID tương ứng
+                        window.location.href = `Chi%20tiết%20sản%20phẩm.html?id=${productId}`;
+                    }
+                }
+            });
+            // 
+        });
+    </script>
+</body>
+
+</html>
