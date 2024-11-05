@@ -1,0 +1,55 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.header {
+    background-color: #eaeaea;
+}
+
+.menu1:hover {
+    color: darkblue;
+}
+
+.nd1 {
+    border: 1px solid black;
+}
+
+.menu3 {
+    padding-left: 50px;
+}
+
+.t1 {
+    position: relative;
+    padding: 0px;
+    height: 50px;
+    border: 1px solid rgba(231, 200, 200, 0.367);
+}
+
+.footer {
+    background-color: #222;
+    color: white;
+    padding: 20px 0;
+}
+
+.footer a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    color: #ff5e00;
+}
+
+.footer .logo img {
+    width: 150px;
+}
+
+.footer .social-icons a {
+    margin-right: 10px;
+}
+
+.footer .social-icons a i {
+    font-size: 24px;
+}

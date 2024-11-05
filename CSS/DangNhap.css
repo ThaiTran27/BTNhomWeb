@@ -1,0 +1,13 @@
+.container-fluid {
+    background-image: url(../IMG/anh3.jpg);
+    background-size: cover;
+}
+
+.card {
+    background-color: rgba(248, 249, 250, 0.9);
+    /* Thay đổi alpha để tăng độ trong suốt */
+    backdrop-filter: blur(10px);
+    /* Thêm hiệu ứng làm mờ nền phía sau */
+    border: none;
+    /* Bỏ viền nếu cần */
+}

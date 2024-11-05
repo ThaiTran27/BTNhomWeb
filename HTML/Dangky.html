@@ -4,27 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Biểu mẫu đăng ký</title>
+    <title>Đăng ký</title>
+    <link rel="stylesheet" href="../CSS/DangKy.css">
     <link rel="stylesheet" href="../bootstrap-5.3.3-dist/css/bootstrap.min.css">
     <script src="../bootstrap-5.3.3-dist/js/jquery-3.7.1.min.js"></script>
     <script src="../bootstrap-5.3.3-dist/js/bootstrap.min.js"></script>
     <style>
-        .registration-form {
-            max-width: 400px;
-            margin: 50px auto;
-            padding: 20px;
-            background-color: #f8f9fa;
-            border-radius: 8px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-        }
-        
-        .registration-form .form-control {
-            margin-bottom: 15px;
-        }
-        
-        .registration-form .btn {
-            width: 100%;
-        }
+
     </style>
     <script>
         function handleSubmit(event) {
@@ -100,53 +86,54 @@
 </head>
 
 <body>
-
-    <div class="registration-form">
-        <form onsubmit="handleSubmit(event)">
-            <h4 class="text-center mb-4">Đăng ký</h4>
-            <div class="mb-3">
-                <label for="name" class="form-label">Nhập họ và tên</label>
-                <input type="text" class="form-control" id="name" required>
-            </div>
-            <div class="mb-3">
-                <label for="phone" class="form-label">Nhập số điện thoại</label>
-                <input type="text" class="form-control" id="phone" required>
-            </div>
-            <div class="mb-3">
-                <label for="email" class="form-label">Nhập email (Không bắt buộc)</label>
-                <input type="email" class="form-control" id="email">
-                <div class="form-text">Hóa đơn VAT khi mua hàng sẽ được gửi qua email này</div>
-            </div>
-            <div class="mb-3">
-                <label for="dob" class="form-label">Ngày sinh</label>
-                <input type="date" class="form-control" id="dob" required>
-            </div>
-            <div class="mb-3">
-                <label for="password" class="form-label">Nhập mật khẩu</label>
-                <input type="password" class="form-control" id="password" required minlength="6">
-                <div class="form-text">Mật khẩu tối thiểu 6 ký tự, có ít nhất 1 chữ và 1 số. (VD: 12345a)</div>
-            </div>
-            <div class="mb-3">
-                <label for="confirm-password" class="form-label">Nhập lại mật khẩu</label>
-                <input type="password" class="form-control" id="confirm-password" required>
-            </div>
-            <div class="form-check mb-2">
-                <input class="form-check-input" type="checkbox" id="newsletter">
-                <label class="form-check-label" for="newsletter">Đăng ký nhận bản tin khuyến mại từ MayanhTT</label>
-            </div>
-            <div class="form-check mb-2">
-                <input class="form-check-input" type="checkbox" id="terms" required>
-                <label class="form-check-label" for="terms">Tôi đồng ý với các điều khoản bảo mật cá nhân</label>
-            </div>
-            <div class="form-check mb-4">
-                <input class="form-check-input" type="checkbox" id="student">
-                <label class="form-check-label" for="student">Tôi là Học sinh - sinh viên (nhận thêm ưu đãi tới 500K/ sản phẩm)</label>
-            </div>
-            <button type="submit" class="btn btn-danger">Đăng ký</button>
-            <div class="text-center mt-3">
-                <a href="../HTML/DangNhap.html">Đăng nhập ngay</a>
-            </div>
-        </form>
+    <div class="container-fluid">
+        <div class="registration-form">
+            <form onsubmit="handleSubmit(event)">
+                <h4 class="text-center mb-4">Đăng ký</h4>
+                <div class="mb-3">
+                    <label for="name" class="form-label">Nhập họ và tên</label>
+                    <input type="text" class="form-control" id="name" required>
+                </div>
+                <div class="mb-3">
+                    <label for="phone" class="form-label">Nhập số điện thoại</label>
+                    <input type="text" class="form-control" id="phone" required>
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Nhập email (Không bắt buộc)</label>
+                    <input type="email" class="form-control" id="email">
+                    <div class="form-text">Hóa đơn VAT khi mua hàng sẽ được gửi qua email này</div>
+                </div>
+                <div class="mb-3">
+                    <label for="dob" class="form-label">Ngày sinh</label>
+                    <input type="date" class="form-control" id="dob" required>
+                </div>
+                <div class="mb-3">
+                    <label for="password" class="form-label">Nhập mật khẩu</label>
+                    <input type="password" class="form-control" id="password" required minlength="6">
+                    <div class="form-text">Mật khẩu tối thiểu 6 ký tự, có ít nhất 1 chữ và 1 số. (VD: 12345a)</div>
+                </div>
+                <div class="mb-3">
+                    <label for="confirm-password" class="form-label">Nhập lại mật khẩu</label>
+                    <input type="password" class="form-control" id="confirm-password" required>
+                </div>
+                <div class="form-check mb-2">
+                    <input class="form-check-input" type="checkbox" id="newsletter">
+                    <label class="form-check-label" for="newsletter">Đăng ký nhận bản tin khuyến mại từ MayanhTT</label>
+                </div>
+                <div class="form-check mb-2">
+                    <input class="form-check-input" type="checkbox" id="terms" required>
+                    <label class="form-check-label" for="terms">Tôi đồng ý với các điều khoản bảo mật cá nhân</label>
+                </div>
+                <div class="form-check mb-4">
+                    <input class="form-check-input" type="checkbox" id="student">
+                    <label class="form-check-label" for="student">Tôi là Học sinh - sinh viên (nhận thêm ưu đãi tới 500K/ sản phẩm)</label>
+                </div>
+                <button type="submit" class="btn btn-danger">Đăng ký</button>
+                <div class="text-center mt-3">
+                    <a href="../HTML/DangNhap.html">Đăng nhập ngay</a>
+                </div>
+            </form>
+        </div>
     </div>
 </body>
 
