@@ -10,7 +10,7 @@
     <script src="../bootstrap-5.3.3-dist/js/jquery-3.7.1.min.js"></script>
     <script src="../bootstrap-5.3.3-dist/js/bootstrap.min.js"></script>
     <style>
-        
+
     </style>
     <script>
         function updateTotal() {
@@ -241,9 +241,39 @@
             }
         });
     </script>
+    <!--  -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Lấy ID sản phẩm từ URL
+            const urlParams = new URLSearchParams(window.location.search);
+            const productId = urlParams.get('id');
 
-
-
+            if (productId) {
+                fetch('../JS/products.json')
+                    .then(response => {
+                        if (!response.ok) throw new Error('Không thể tải dữ liệu');
+                        return response.json();
+                    })
+                    .then(products => {
+                        const product = products.find(p => p.id == productId);
+                        if (product) {
+                            // Cập nhật thông tin sản phẩm trên trang
+                            document.querySelector('.product-details h3').textContent = product.name;
+                            document.getElementById('productPrice').textContent =
+                                product.price.toLocaleString('vi-VN') + '₫';
+                            document.querySelector('.product-details img').src = product.images;
+                            document.querySelector('.product-details p:nth-of-type(3)').textContent =
+                                `Mã sản phẩm: ${product.product_code}`;
+                            document.querySelector('.product-details p:nth-of-type(5)').textContent =
+                                `Mô tả: ${product.description}`;
+                        } else {
+                            alert("Sản phẩm không tồn tại.");
+                        }
+                    })
+                    .catch(error => console.error('Lỗi khi tải dữ liệu sản phẩm:', error));
+            }
+        });
+    </script>
 </body>
 
 </html>

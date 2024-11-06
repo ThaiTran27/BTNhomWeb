@@ -173,5 +173,77 @@
         "product_code": "3796",
         "price": 13899000,
         "description": ""
+    },
+    {
+        "id": 23,
+        "images": "../IMG/Home/home1.webp",
+        "name": "Đèn Flash Ulanzi F32 Kèm Triger TT01",
+        "product_code": "UL-F32-001",
+        "price": 650000,
+        "description": ""
+    },
+    {
+        "id": 24,
+        "images": "../IMG/Home/home2.webp",
+        "name": "Pin V-Mount Ulanzi BP-VL99 Chocolate 26000mAh",
+        "product_code": "UL-BP-VL99",
+        "price": 750000,
+        "description": ""
+    },
+    {
+        "id": 25,
+        "images": "../IMG/Home/home3.webp",
+        "name": "Cáp Nguồn SmallRig 3266 - Type-C đến D-Tap",
+        "product_code": "SR-3266",
+        "price": 300000,
+        "description": ""
+    },
+    {
+        "id": 26,
+        "images": "../IMG/Home/home4.webp",
+        "name": "Xe Đẩy Vali Kéo Thiết Bị Chụp Hình Ngoại Cảnh Ulanzi BT-03",
+        "product_code": "UL-BT03",
+        "price": 1200000,
+        "description": ""
+    },
+    {
+        "id": 27,
+        "images": "../IMG/Home/home5.webp",
+        "name": "Balo Máy Ảnh Ulanzi BP10 - 25L Có Thể Mở Rộng Lên 35L",
+        "product_code": "UL-BP10",
+        "price": 850000,
+        "description": ""
+    },
+    {
+        "id": 28,
+        "images": "../IMG/Home/home6.webp",
+        "name": "Gimbal Chống Rung Zhiyun CRANE 4 - Bản Combo",
+        "product_code": "ZHY-CRANE4",
+        "price": 1500000,
+        "description": ""
+    },
+    {
+        "id": 29,
+        "images": "../IMG/Home/home7.webp",
+        "name": "Đèn Flash Godox V860iii - TTL for Sony (Đời 3)",
+        "product_code": "GDX-V860III-S",
+        "price": 2200000,
+        "description": ""
+    },
+    {
+        "id": 30,
+        "images": "../IMG/Home/home8.webp",
+        "name": "Đèn Flash Godox V1 Pro N - For Nikon Đèn Flash G",
+        "product_code": "GDX-V1P-N",
+        "price": 2000000,
+        "description": ""
+    },
+    {
+        "id": 31,
+        "images": "../IMG/Home/home9.webp",
+        "name": "Pin Godox VB26 cho đèn Godox V1/V860iii",
+        "product_code": "GDX-VB26",
+        "price": 600000,
+        "description": ""
     }
 ]
